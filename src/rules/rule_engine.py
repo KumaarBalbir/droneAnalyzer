@@ -1,6 +1,7 @@
 from typing import Dict, List
 from datetime import datetime, time
 from dataclasses import dataclass
+from src.rules.predefined_rules import get_security_rules
 
 
 @dataclass
@@ -13,7 +14,7 @@ class SecurityEvent:
 
 class RuleEngine:
     def __init__(self):
-        self.rules = []
+        self.rules = get_security_rules()
 
     def add_rule(self, rule: Dict):
         """Add a security rule to the engine"""
@@ -36,11 +37,23 @@ class RuleEngine:
         return rule_results
 
     def _check_rule_conditions(self, rule: Dict, frame_data: Dict, telemetry_data: Dict) -> bool:
+        """check if the rule conditions are met
+
+        Args:
+            rule (Dict): Rule to check
+            frame_data (Dict): Frame data
+            telemetry_data (Dict): Telemetry data
+
+        Returns:
+            bool: True if the rule conditions are met, False otherwise
         """
-        Check if rule conditions are met
-        To be implemented based on specific rule types
-        """
-        return False  # Placeholder
+        # Check if the rule conditions are met
+        if rule['type'] == 'spatial':
+            return self._check_spatial_rule(rule, frame_data, telemetry_data)
+        elif rule['type'] == 'temporal':
+            return self._check_temporal_rule(rule, frame_data, telemetry_data)
+        else:
+            return False
 
     def evaluate(self, event: SecurityEvent) -> List[str]:
         alerts = []
