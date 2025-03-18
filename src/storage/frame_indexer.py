@@ -11,14 +11,20 @@ class FrameIndexer:
 
     def add_frame(self, frame_data: Dict):
         """Add frame data to storage"""
+        # Create new row without explicit dtype specification
         new_row = pd.DataFrame([{
             'timestamp': frame_data['timestamp'],
             'frame_id': frame_data['frame_id'],
             'description': frame_data['description'],
             'objects': frame_data['objects']
         }])
+
+        # Use concat with ignore_index
         self.frames_df = pd.concat(
-            [self.frames_df, new_row], ignore_index=True)
+            [self.frames_df, new_row],
+            ignore_index=True,
+            copy=False
+        )
 
     def query_frames(self, object_type: str = None, time_range: Tuple[datetime, datetime] = None) -> pd.DataFrame:
         """Query frames based on filters"""

@@ -12,6 +12,9 @@ from src.alerts.alert_generator import AlertGenerator
 from src.processors.frame_processor import FrameProcessor
 from src.processors.telemetry_processor import TelemetryProcessor
 
+# path of yolov8n model
+yolov8n_model_path = "yolov8n.pt"
+
 # Initialize components
 
 
@@ -20,7 +23,7 @@ def init_components():
     return (
         VideoSimulator(),
         TelemetrySimulator(),
-        ObjectDetector(),
+        ObjectDetector(yolov8n_model_path),
         FrameIndexer(),
         EventLogger(),
         AlertGenerator(),
@@ -103,24 +106,25 @@ while monitoring_active:
     telemetry = telemetry_sim.generate_telemetry()
 
     # Process data
-    processed_frame = frame_processor.process(frame)
-    processed_telemetry = telemetry_processor.process(telemetry)
+    processed_frame = frame_processor.process_frame(frame)
+    processed_telemetry = telemetry_processor.process_telemetry(telemetry)
 
     # Process frame with detector
-    detections = detector.process_frame({'objects': processed_frame.objects})
+    detections = detector.process_frame(
+        {'objects': processed_frame['processed_objects']})
 
     # Store data and update summary
     frame_dict = {
-        'timestamp': processed_frame.timestamp,
-        'frame_id': processed_frame.frame_id,
-        'description': processed_frame.description,
-        'objects': processed_frame.objects
+        'timestamp': processed_frame['timestamp'],
+        'frame_id': processed_frame['frame_id'],
+        'description': processed_frame['description'],
+        'objects': processed_frame['processed_objects']
     }
     telemetry_dict = {
-        'timestamp': processed_telemetry.timestamp,
-        'location': processed_telemetry.location,
-        'altitude': processed_telemetry.altitude,
-        'battery': processed_telemetry.battery
+        'timestamp': processed_telemetry['timestamp'],
+        'location': processed_telemetry['location'],
+        'altitude': processed_telemetry['altitude'],
+        'battery': processed_telemetry['battery']
     }
 
     indexer.add_frame(frame_dict)
@@ -131,13 +135,13 @@ while monitoring_active:
 
     # Update displays
     telemetry_container.write({
-        "Location": processed_telemetry.location,
-        "Altitude": f"{processed_telemetry.altitude:.1f}m",
-        "Battery": f"{processed_telemetry.battery}%",
-        "Time": processed_telemetry.timestamp.strftime("%H:%M:%S")
+        "Location": processed_telemetry['location'],
+        "Altitude": f"{processed_telemetry['altitude']:.1f}m",
+        "Battery": f"{processed_telemetry['battery']}%",
+        "Time": processed_telemetry['timestamp'].strftime("%H:%M:%S")
     })
 
-    frame_container.write(processed_frame.description)
+    frame_container.write(processed_frame['description'])
     summary_container.write(summarizer.generate_summary())
     # Show last 5 alerts
     alerts_container.write("\n".join(alert_gen.alerts[-5:]))
