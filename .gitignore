@@ -1,0 +1,6 @@
+flytenv/
+config/
+notebooks/
+yolov5n.pt
+.cursor/
+
