@@ -4,6 +4,7 @@ from typing import Dict, List, Optional
 import random
 import numpy as np
 
+
 @dataclass
 class VideoFrame:
     timestamp: datetime
@@ -11,6 +12,7 @@ class VideoFrame:
     description: str
     objects: List[Dict]
     image: Optional[np.ndarray] = None  # For real video frames
+
 
 class VideoSimulator:
     def __init__(self):
@@ -40,7 +42,8 @@ class VideoSimulator:
 
         description = f"Frame {self.current_frame}: "
         if objects:
-            obj_descriptions = [f"{obj['color']} {obj['type']}" for obj in objects]
+            obj_descriptions = [
+                f"{obj['color']} {obj['type']}" for obj in objects]
             description += f"Detected {', '.join(obj_descriptions)}"
         else:
             description += "No objects detected"
@@ -52,9 +55,23 @@ class VideoSimulator:
             objects=objects
         )
 
+    # def generate_frame(self) -> Dict:
+    #     return {
+    #         'timestamp': datetime.now(),
+    #         'objects': [
+    #             {
+    #                 'type': 'vehicle',  # or person, animal
+    #                 'color': 'blue',
+    #                 'confidence': 0.95,
+    #                 'bbox': [x1, y1, x2, y2]
+    #             }
+    #         ]
+    #     }
+
     def set_video_source(self, source):
-        """
-        Configure video source for real video processing
-        To be implemented for real video capture
+        """Set the video source for real video processing
+
+        Args:
+            source (str): Video source, e.g. "camera", "video_file", "stream"
         """
         pass
