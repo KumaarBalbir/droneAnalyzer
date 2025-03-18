@@ -13,6 +13,8 @@ from src.processors.frame_processor import FrameProcessor
 from src.processors.telemetry_processor import TelemetryProcessor
 
 # Initialize components
+
+
 @st.cache_resource
 def init_components():
     return (
