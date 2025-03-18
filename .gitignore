@@ -4,4 +4,5 @@ notebooks/
 yolov5n.pt
 .cursor/
 flytbase-overall-flow.drawio
+src/*/__pycache__/
 
