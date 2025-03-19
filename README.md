@@ -46,3 +46,6 @@ streamlit run main.py --server.port 5000
 http://localhost:5000
 ```
 
+5. The project architecture:
+
+![Project Architecture](flytbase-overall-flow.png)
