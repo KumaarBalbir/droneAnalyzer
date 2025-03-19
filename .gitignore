@@ -17,4 +17,5 @@ flytbase-overall-flow.drawio
 
 # Ignore all .pyc files
 *.pyc
+main2.py
 
