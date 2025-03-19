@@ -54,24 +54,3 @@ class VideoSimulator:
             description=description,
             objects=objects
         )
-
-    # def generate_frame(self) -> Dict:
-    #     return {
-    #         'timestamp': datetime.now(),
-    #         'objects': [
-    #             {
-    #                 'type': 'vehicle',  # or person, animal
-    #                 'color': 'blue',
-    #                 'confidence': 0.95,
-    #                 'bbox': [x1, y1, x2, y2]
-    #             }
-    #         ]
-    #     }
-
-    def set_video_source(self, source):
-        """Set the video source for real video processing
-
-        Args:
-            source (str): Video source, e.g. "camera", "video_file", "stream"
-        """
-        pass
