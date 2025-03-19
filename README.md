@@ -135,3 +135,15 @@ http://localhost:5000
    - Webhook support
    - Database adapters
    - Message queue integration
+
+
+### Documentation
+
+The full documentation is available at: https://KumaarBalbir.github.io/droneAnalyzer/
+
+For local development:
+```bash
+cd docs
+make html
+# Open docs/build/html/index.html in your browser
+```
