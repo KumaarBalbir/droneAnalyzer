@@ -11,7 +11,7 @@
    - AlertGenerator: Applies security rules to generate alerts
 
 3. Storage System
-   - FrameIndexer: Indexes and stores frame data for querying
+   - FrameIndexer: Indexes and stores frame data for querying (as of now in memory storage)
    - Historical data management
 
 4. User Interface
