@@ -1,5 +1,5 @@
 Welcome to Drone Security Analyst's documentation!
-===============================================
+==================================================
 
 .. toctree::
    :maxdepth: 2

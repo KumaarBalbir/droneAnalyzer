@@ -2,10 +2,10 @@ API Reference
 =============
 
 Core Components
---------------
+----------------
 
 Video Processor
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. automodule:: src.processors.video_processor
    :members:
@@ -20,7 +20,7 @@ Video Processor
        ...     print(frame_data['description'])
 
 Frame Processor
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. automodule:: src.processors.frame_processor
    :members:
@@ -30,7 +30,7 @@ Frame Processor
    Processes individual video frames and extracts relevant information.
 
 Object Detector
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. automodule:: src.models.object_detector
    :members:
@@ -40,10 +40,10 @@ Object Detector
    Detects and classifies objects in video frames using YOLOv8.
 
 Storage Components
-----------------
+-------------------
 
 Frame Indexer
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. automodule:: src.storage.frame_indexer
    :members:
@@ -53,7 +53,7 @@ Frame Indexer
    Indexes and stores video frames for historical analysis.
 
 Event Logger
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. automodule:: src.storage.event_logger
    :members:

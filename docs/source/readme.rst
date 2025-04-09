@@ -2,7 +2,7 @@ Readme
 ======
 
 Drone Security Analyst
----------------------
+-----------------------
 
 A real-time drone security analysis system that processes video streams and telemetry data to detect and analyze security events.
 
@@ -16,59 +16,66 @@ Features
 * Frame-by-frame indexing for historical analysis
 
 Quick Start
-----------
+------------
 
 Local Development
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 1. Clone the repository
-.. code-block:: bash
 
-   git clone https://github.com/KumaarBalbir/droneAnalyzer.git
+    .. code-block:: bash
 
-2. Create a virtual environment
-.. code-block:: bash
+        git clone https://github.com/KumaarBalbir/droneAnalyzer.git
 
-   sudo apt-get install python3-venv
-   python3 -m venv venv
-   source venv/bin/activate
+2. Create a virtual environment (On Ubuntu/Debian)
+
+    .. code-block:: bash
+
+        sudo apt-get install python3-venv
+        python3 -m venv venv
+        source venv/bin/activate
 
 3. On Windows
-.. code-block:: bash
 
-   python -m venv venv
-   venv\Scripts\activate
+    .. code-block:: bash
+
+        python -m venv venv
+        venv\Scripts\activate
 
 4. Install uv (a fast Python package manager that acts as a drop-in replacement for pip)
-.. code-block:: bash
 
-   pip install uv
+     .. code-block:: bash
+
+         pip install uv
 
 5. Install the project dependencies
-.. code-block:: bash
 
-   uv pip install -r pyproject.toml
+      .. code-block:: bash
+
+         uv pip install -r pyproject.toml
 
 6. Run the project
-.. code-block:: bash
 
-   streamlit run main.py --server.port 5000
+      .. code-block:: bash
+
+         streamlit run main.py --server.port 5000
 
 7. View the project in your browser
-.. code-block:: bash
 
-   http://localhost:5000
+      .. code-block:: bash
+
+         http://localhost:5000
    
 High level architecture
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /docs/source/images/flytbase-overall-flow.png
+.. image:: images/flytbase-overall-flow.png
    :alt: High level architecture
    :width: 100%
    :align: center
 
 
 Project Structure
----------------
+------------------
 
 * ``src/processors/`` - Video and frame processing
 * ``src/models/`` - Object detection and analysis

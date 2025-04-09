@@ -1,8 +1,8 @@
 Usage Guide
-==========
+============
 
 Installation
------------
+------------
 
 .. code-block:: bash
 
@@ -14,10 +14,10 @@ Installation
    pip install -e .
 
 Basic Usage
-----------
+-----------
 
 Processing a Video File
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -31,7 +31,7 @@ Processing a Video File
        print(f"Frame {frame_data['frame_id']}: {frame_data['description']}")
 
 Processing Live Stream
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -43,10 +43,10 @@ Processing Live Stream
        print(f"Frame {frame_data['frame_id']}: {frame_data['description']}")
 
 Advanced Usage
-------------
+--------------
 
 Configuring Object Detection
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -60,7 +60,7 @@ Configuring Object Detection
    detector.iou_threshold = 0.5
 
 Querying Historical Data
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 

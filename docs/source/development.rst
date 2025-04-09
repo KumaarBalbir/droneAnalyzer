@@ -1,8 +1,8 @@
 Development Guide
-===============
+=================
 
 Setup Development Environment
----------------------------
+------------------------------
 
 1. Clone the repository:
    .. code-block:: bash
@@ -24,14 +24,14 @@ Setup Development Environment
       pip install -e ".[dev]"
 
 Running Tests
------------
+-------------
 
 .. code-block:: bash
 
    pytest tests/
 
 Building Documentation
--------------------
+------------------------
 
 .. code-block:: bash
 
@@ -39,7 +39,7 @@ Building Documentation
    make html
 
 Code Style
----------
+----------
 
 This project follows PEP 8 guidelines. Use black for code formatting:
 
@@ -48,7 +48,7 @@ This project follows PEP 8 guidelines. Use black for code formatting:
    black src/ tests/
 
 Contributing
-----------
+------------
 
 1. Fork the repository
 2. Create a feature branch
@@ -57,7 +57,7 @@ Contributing
 5. Submit a pull request
 
 Architecture Overview
-------------------
+---------------------
 
 The system is built with the following components:
 

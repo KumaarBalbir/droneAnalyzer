@@ -48,8 +48,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#drone-security-analyst">Drone Security Analyst</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-development">Local Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#high-level-architecture">High level architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#project-structure">Project Structure</a></li>
@@ -102,22 +102,67 @@
 </section>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<section id="local-development">
+<h3>Local Development<a class="headerlink" href="#local-development" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Clone the repository</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/KumaarBalbir/droneAnalyzer.git
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+<li><p>Create a virtual environment (On Ubuntu/Debian)</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-venv
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>On Windows</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Install uv (a fast Python package manager that acts as a drop-in replacement for pip)</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>uv
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Install the project dependencies</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>pyproject.toml
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Run the project</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>run<span class="w"> </span>main.py<span class="w"> </span>--server.port<span class="w"> </span><span class="m">5000</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>View the project in your browser</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://localhost:5000
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </section>
-<section id="basic-usage">
-<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">src.processors.video_processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoProcessor</span>
-
-<span class="c1"># Process a video file</span>
-<span class="n">processor</span> <span class="o">=</span> <span class="n">VideoProcessor</span><span class="p">(</span><span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;path/to/video.mp4&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">frame_data</span> <span class="ow">in</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_video</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Frame </span><span class="si">{</span><span class="n">frame_data</span><span class="p">[</span><span class="s1">&#39;frame_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">frame_data</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+<section id="high-level-architecture">
+<h3>High level architecture<a class="headerlink" href="#high-level-architecture" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/flytbase-overall-flow.png"><img alt="High level architecture" class="align-center" src="_images/flytbase-overall-flow.png" style="width: 100%;" />
+</a>
 </section>
 </section>
 <section id="project-structure">

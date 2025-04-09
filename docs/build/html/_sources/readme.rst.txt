@@ -2,7 +2,7 @@ Readme
 ======
 
 Drone Security Analyst
----------------------
+-----------------------
 
 A real-time drone security analysis system that processes video streams and telemetry data to detect and analyze security events.
 
@@ -16,29 +16,66 @@ Features
 * Frame-by-frame indexing for historical analysis
 
 Quick Start
-----------
+------------
 
-Installation
-~~~~~~~~~~~
+Local Development
+~~~~~~~~~~~~~~~~~
+1. Clone the repository
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   pip install -e .
+        git clone https://github.com/KumaarBalbir/droneAnalyzer.git
 
-Basic Usage
-~~~~~~~~~~
+2. Create a virtual environment (On Ubuntu/Debian)
 
-.. code-block:: python
+    .. code-block:: bash
 
-   from src.processors.video_processor import VideoProcessor
+        sudo apt-get install python3-venv
+        python3 -m venv venv
+        source venv/bin/activate
 
-   # Process a video file
-   processor = VideoProcessor(video_path="path/to/video.mp4")
-   for frame_data in processor.process_video():
-       print(f"Frame {frame_data['frame_id']}: {frame_data['description']}")
+3. On Windows
+
+    .. code-block:: bash
+
+        python -m venv venv
+        venv\Scripts\activate
+
+4. Install uv (a fast Python package manager that acts as a drop-in replacement for pip)
+
+     .. code-block:: bash
+
+         pip install uv
+
+5. Install the project dependencies
+
+      .. code-block:: bash
+
+         uv pip install -r pyproject.toml
+
+6. Run the project
+
+      .. code-block:: bash
+
+         streamlit run main.py --server.port 5000
+
+7. View the project in your browser
+
+      .. code-block:: bash
+
+         http://localhost:5000
+   
+High level architecture
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: images/flytbase-overall-flow.png
+   :alt: High level architecture
+   :width: 100%
+   :align: center
+
 
 Project Structure
----------------
+------------------
 
 * ``src/processors/`` - Video and frame processing
 * ``src/models/`` - Object detection and analysis

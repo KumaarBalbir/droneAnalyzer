@@ -47,27 +47,27 @@
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Readme</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#core-components">Core Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#video-processor">Video Processor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.processors.video_processor">Video Processor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#src.processors.video_processor.VideoProcessor"><code class="docutils literal notranslate"><span class="pre">VideoProcessor</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#frame-processor">Frame Processor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.processors.frame_processor">Frame Processor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#src.processors.frame_processor.FrameProcessor"><code class="docutils literal notranslate"><span class="pre">FrameProcessor</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#object-detector">Object Detector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.models.object_detector">Object Detector</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#src.models.object_detector.ObjectDetector"><code class="docutils literal notranslate"><span class="pre">ObjectDetector</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#storage-components">Storage Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#frame-indexer">Frame Indexer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.storage.frame_indexer">Frame Indexer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#src.storage.frame_indexer.EventLogger"><code class="docutils literal notranslate"><span class="pre">EventLogger</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#src.storage.frame_indexer.FrameIndexer"><code class="docutils literal notranslate"><span class="pre">FrameIndexer</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#event-logger">Event Logger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.storage.event_logger">Event Logger</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#src.storage.event_logger.EventLogger"><code class="docutils literal notranslate"><span class="pre">EventLogger</span></code></a></li>
 </ul>
 </li>
@@ -107,9 +107,9 @@
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h1>
 <section id="core-components">
 <h2>Core Components<a class="headerlink" href="#core-components" title="Link to this heading"></a></h2>
-<section id="video-processor">
-<h3>Video Processor<a class="headerlink" href="#video-processor" title="Link to this heading"></a></h3>
-<p id="module-src.processors.video_processor">The VideoProcessor class handles video stream processing and frame analysis.</p>
+<section id="module-src.processors.video_processor">
+<span id="video-processor"></span><h3>Video Processor<a class="headerlink" href="#module-src.processors.video_processor" title="Link to this heading"></a></h3>
+<p>The VideoProcessor class handles video stream processing and frame analysis.</p>
 <dl>
 <dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">processor</span> <span class="o">=</span> <span class="n">VideoProcessor</span><span class="p">(</span><span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;video.mp4&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">frame_data</span> <span class="ow">in</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_video</span><span class="p">():</span>
@@ -143,9 +143,9 @@
 </dd></dl>
 
 </section>
-<section id="frame-processor">
-<h3>Frame Processor<a class="headerlink" href="#frame-processor" title="Link to this heading"></a></h3>
-<p id="module-src.processors.frame_processor">Processes individual video frames and extracts relevant information.</p>
+<section id="module-src.processors.frame_processor">
+<span id="frame-processor"></span><h3>Frame Processor<a class="headerlink" href="#module-src.processors.frame_processor" title="Link to this heading"></a></h3>
+<p>Processes individual video frames and extracts relevant information.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.processors.frame_processor.FrameProcessor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.processors.frame_processor.</span></span><span class="sig-name descname"><span class="pre">FrameProcessor</span></span><a class="reference internal" href="_modules/src/processors/frame_processor.html#FrameProcessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.processors.frame_processor.FrameProcessor" title="Link to this definition"></a></dt>
@@ -160,9 +160,9 @@ In production, this would handle actual video frame processing.</p>
 </dd></dl>
 
 </section>
-<section id="object-detector">
-<h3>Object Detector<a class="headerlink" href="#object-detector" title="Link to this heading"></a></h3>
-<p id="module-src.models.object_detector">Detects and classifies objects in video frames using YOLOv8.</p>
+<section id="module-src.models.object_detector">
+<span id="object-detector"></span><h3>Object Detector<a class="headerlink" href="#module-src.models.object_detector" title="Link to this heading"></a></h3>
+<p>Detects and classifies objects in video frames using YOLOv8.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.models.object_detector.ObjectDetector">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.object_detector.</span></span><span class="sig-name descname"><span class="pre">ObjectDetector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/object_detector.html#ObjectDetector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.object_detector.ObjectDetector" title="Link to this definition"></a></dt>
@@ -204,9 +204,9 @@ In production, this would handle actual video frame processing.</p>
 </section>
 <section id="storage-components">
 <h2>Storage Components<a class="headerlink" href="#storage-components" title="Link to this heading"></a></h2>
-<section id="frame-indexer">
-<h3>Frame Indexer<a class="headerlink" href="#frame-indexer" title="Link to this heading"></a></h3>
-<p id="module-src.storage.frame_indexer">Indexes and stores video frames for historical analysis.</p>
+<section id="module-src.storage.frame_indexer">
+<span id="frame-indexer"></span><h3>Frame Indexer<a class="headerlink" href="#module-src.storage.frame_indexer" title="Link to this heading"></a></h3>
+<p>Indexes and stores video frames for historical analysis.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.storage.frame_indexer.EventLogger">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.storage.frame_indexer.</span></span><span class="sig-name descname"><span class="pre">EventLogger</span></span><a class="reference internal" href="_modules/src/storage/frame_indexer.html#EventLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.storage.frame_indexer.EventLogger" title="Link to this definition"></a></dt>
@@ -242,9 +242,9 @@ In production, this would handle actual video frame processing.</p>
 </dd></dl>
 
 </section>
-<section id="event-logger">
-<h3>Event Logger<a class="headerlink" href="#event-logger" title="Link to this heading"></a></h3>
-<p id="module-src.storage.event_logger">Logs security events and alerts.</p>
+<section id="module-src.storage.event_logger">
+<span id="event-logger"></span><h3>Event Logger<a class="headerlink" href="#module-src.storage.event_logger" title="Link to this heading"></a></h3>
+<p>Logs security events and alerts.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="src.storage.event_logger.EventLogger">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.storage.event_logger.</span></span><span class="sig-name descname"><span class="pre">EventLogger</span></span><a class="reference internal" href="_modules/src/storage/event_logger.html#EventLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.storage.event_logger.EventLogger" title="Link to this definition"></a></dt>
