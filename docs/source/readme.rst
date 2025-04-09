@@ -18,24 +18,54 @@ Features
 Quick Start
 ----------
 
-Installation
+Local Development
 ~~~~~~~~~~~
-
+1. Clone the repository
 .. code-block:: bash
 
-   pip install -e .
+   git clone https://github.com/KumaarBalbir/droneAnalyzer.git
 
-Basic Usage
-~~~~~~~~~~
+2. Create a virtual environment
+.. code-block:: bash
 
-.. code-block:: python
+   sudo apt-get install python3-venv
+   python3 -m venv venv
+   source venv/bin/activate
 
-   from src.processors.video_processor import VideoProcessor
+3. On Windows
+.. code-block:: bash
 
-   # Process a video file
-   processor = VideoProcessor(video_path="path/to/video.mp4")
-   for frame_data in processor.process_video():
-       print(f"Frame {frame_data['frame_id']}: {frame_data['description']}")
+   python -m venv venv
+   venv\Scripts\activate
+
+4. Install uv (a fast Python package manager that acts as a drop-in replacement for pip)
+.. code-block:: bash
+
+   pip install uv
+
+5. Install the project dependencies
+.. code-block:: bash
+
+   uv pip install -r pyproject.toml
+
+6. Run the project
+.. code-block:: bash
+
+   streamlit run main.py --server.port 5000
+
+7. View the project in your browser
+.. code-block:: bash
+
+   http://localhost:5000
+   
+High level architecture
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /docs/source/images/flytbase-overall-flow.png
+   :alt: High level architecture
+   :width: 100%
+   :align: center
+
 
 Project Structure
 ---------------
