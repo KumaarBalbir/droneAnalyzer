@@ -22,3 +22,7 @@ flytbase-overall-flow.drawio
 *.pyc
 main2.py
 
+src/alerts/__pycache__/
+src/data/__pycache__/
+src/models/__pycache__/
+src/storage/__pycache__/
